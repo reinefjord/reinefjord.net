@@ -16,13 +16,7 @@ main {
     margin: 0 auto;
 }
 
-dt {
-    margin-top: .7rem;
-    margin-bottom: .3rem;
-}
-
 dd {
-    margin-top: .3rem;
     margin-bottom: .7rem;
 }
 
