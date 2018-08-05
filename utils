@@ -1,0 +1,51 @@
+#!/bin/bash
+
+BUILDDIR="build"
+CSS=('static/css/lib/normalize.css' 'static/css/fonts.css' 'static/css/style.css')
+
+function clean {
+    rm -r "$BUILDDIR"
+    mkdir "$BUILDDIR"
+}
+
+function copytobuild {
+    cp -R src/* "$BUILDDIR"
+}
+
+function buildcss {
+    cd $BUILDDIR
+
+    CSSTEMP="$(mktemp)"
+    cat "${CSS[@]}" | npx postcss --no-map --use autoprefixer postcss-csso -o "$CSSTEMP"
+
+    CSSMD5="$(md5sum $CSSTEMP | cut -c1-8)"
+
+    rm -r static/css/*
+
+    mv "$CSSTEMP" "static/css/style.css"
+    sed -i "s:{{style.css}}:/static/css/style.css?$CSSMD5:" "index.html"
+
+    cd ..
+}
+
+function buildjs {
+    cd $BUILDDIR
+
+    JSMD5="$(md5sum static/js/common.js | cut -c1-8)"
+    sed -i "s:{{common.js}}:/static/js/common.js?$JSMD5:" "index.html"
+
+    cd ..
+}
+
+function build {
+    copytobuild
+    buildcss
+    buildjs
+}
+
+function serve {
+    cd build
+    python -m http.server $1
+}
+
+"$@"

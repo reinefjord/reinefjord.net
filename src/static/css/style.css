@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* legacy */
+    word-break: break-word; /* for WebKit/Chrome */
+}
+
+body {
+    font-family: "Libertine", serif;
+    text-decoration-skip: ink;
+}
+
+main {
+    padding: 0 1rem;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+dt {
+    margin-top: .7rem;
+    margin-bottom: .3rem;
+}
+
+dd {
+    margin-top: .3rem;
+    margin-bottom: .7rem;
+}
+
+code, .email {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.9em;
+}
