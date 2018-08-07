@@ -5,15 +5,32 @@
     word-break: break-word; /* for WebKit/Chrome */
 }
 
+html {
+    min-height: 100%;
+    background: linear-gradient(110deg, rgba(139,74,255,1) 0%, rgba(25,213,255,1) 60%, rgba(255,239,153,1) 100%);
+}
+
 body {
     font-family: "Libertine", serif;
     text-decoration-skip: ink;
+    padding: 1rem;
 }
 
 main {
-    padding: 0 1rem;
+    padding: 1.2rem 1rem;
     max-width: 40rem;
     margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main > :first-child {
+    margin-top: 0;
+}
+
+main > :last-child {
+    margin-bottom: 0;
 }
 
 dd {
