@@ -4,8 +4,7 @@ BUILDDIR="build"
 CSS=('static/css/lib/normalize.css' 'static/css/style.css')
 
 function clean {
-    rm -r "$BUILDDIR"
-    mkdir "$BUILDDIR"
+    rm -r "$BUILDDIR"/*
 }
 
 function copytobuild {
