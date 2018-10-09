@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: sans;
+    font-family: sans-serif;
 }
 
 main {
@@ -34,7 +34,7 @@ dd {
 }
 
 code, .email {
-    font-family: monospace, sans;
+    font-family: monospace, sans-serif;
     font-size: 0.9em;
 }
 
