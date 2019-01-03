@@ -2,7 +2,7 @@ function emaildecode() {
   var emails = document.getElementsByClassName("encoded");
 
   for (var i = 0; i < emails.length; i++) {
-    var b64 = emails[i].innerHTML;
+    var b64 = emails[i].dataset.encoded;
     var decoded = window.atob(b64);
     emails[i].innerHTML = decoded;
     emails[i].href = "mailto:" + decoded;

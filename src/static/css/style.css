@@ -10,13 +10,10 @@ html {
 }
 
 body {
-    font-family: serif;
+    background-color: #fff;
+    font-family: sans-serif;
     text-decoration-skip: ink;
     padding: 1rem 1rem 2rem 1rem;
-}
-
-h1, h2, h3 {
-    font-family: sans-serif;
 }
 
 main {
@@ -34,8 +31,8 @@ dd {
 }
 
 code, .email {
-    font-family: monospace, sans-serif;
-    font-size: 0.9em;
+    /* http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/ */
+    font-family: monospace, monospace;
 }
 
 footer {
